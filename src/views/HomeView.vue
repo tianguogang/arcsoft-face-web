@@ -18,11 +18,11 @@
           <template #title>
             <span>
               <team-outlined />
-              <span>Team</span>
+              <span>人脸识别</span>
             </span>
           </template>
-          <a-menu-item key="6">Team 1</a-menu-item>
-          <a-menu-item key="8"><router-link to="dictData">字典数据</router-link></a-menu-item>
+          <a-menu-item key="7"><router-link to="addFaceInfo">新增人脸</router-link></a-menu-item>
+          <a-menu-item key="8"><router-link to="checkFaceInfo">人脸比对</router-link></a-menu-item>
         </a-sub-menu>
         <a-menu-item key="9">
           <file-outlined />

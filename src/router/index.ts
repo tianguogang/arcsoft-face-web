@@ -15,6 +15,14 @@ import {createRouter, createWebHashHistory, createWebHistory} from 'vue-router'
     path: '/dictData',
     name: 'dictData',
     component: () => import('../views/data/DictData.vue')
+  },{
+    path: '/checkFaceInfo',
+    name: 'checkFaceInfo',
+    component: () => import('../views/face/CheckFaceInfo.vue')
+  },{
+    path: '/addFaceInfo',
+    name: 'addFaceInfo',
+    component: () => import('../views/face/AddFaceInfo.vue')
   }
 ]
 
