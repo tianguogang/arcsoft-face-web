@@ -14,7 +14,7 @@
        <a-card-meta :title="userInfo.message"  >
        </a-card-meta>
        <hr/>
-        <p v-if="userInfo.data">年龄： {{userInfo.data.age}} &nbsp;&nbsp;&nbsp;&nbsp 性别：{{userInfo.data.gender=1?"男":"女"}}  <span v-if="userInfo.data">&nbsp;&nbsp;&nbsp;&nbsp 活体检测： {{userInfo.data.liveness=1?'活体':'图片'}}</span></p>
+        <p v-if="userInfo.data">年龄： {{userInfo.data.age}} &nbsp;&nbsp;&nbsp;&nbsp 性别：{{ getGender(userInfo.data.gender) }}   <span v-if="userInfo.data">&nbsp;&nbsp;&nbsp;&nbsp 活体检测： {{getLive(userInfo.data.liveness) }}</span></p>
 
 
      </a-card>
@@ -67,12 +67,25 @@ export default {
       startCamera();
       setInterval(detectFace, 1000);
     });
-
+function getGender(e){
+  if (e==0){
+    return '男'
+  }else {
+    return '女'
+  }
+}
+function getLive(e){
+  if (e==1){
+    return '正常'
+  }else {
+    return  '照片嫌疑'
+  }
+}
     return {
       video,
       canvas,
       photo,userInfo,
-      takePicture,
+      takePicture,getGender,getLive
     };
   },
 };
