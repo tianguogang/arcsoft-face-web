@@ -34,6 +34,9 @@
         <template v-if="column.dataIndex === 'status'">
           <a-tag :color="getClolor(record.status)">{{ record.status == 0 ? '启用' : '停用' }}</a-tag>
         </template>
+        <template v-if="column.dataIndex === 'dictValue'">
+          <span>{{record.dictValue.substr (0,4)}}*******{{record.dictValue.substr (-4)}}</span>
+        </template>
 
         <template v-if="column.key === 'action'">
         <span>
